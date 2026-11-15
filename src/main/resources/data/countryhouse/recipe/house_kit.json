@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+		"LLL",
+		"CIB",
+		"SSS"
+	],
+	"key": {
+		"L": "#minecraft:logs",
+		"C": "minecraft:chest",
+		"I": "minecraft:iron_block",
+		"B": "#minecraft:beds",
+		"S": "minecraft:cobblestone"
+	},
+	"result": {
+		"id": "countryhouse:house_kit",
+		"count": 1
+	}
+}

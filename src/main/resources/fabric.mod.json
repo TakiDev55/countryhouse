@@ -1,0 +1,19 @@
+{
+	"schemaVersion": 1,
+	"id": "countryhouse",
+	"version": "${version}",
+	"name": "Country House Kit",
+	"description": "Right-click the kit and a rustic, self-sufficient farmhouse appears: big sorted storage, fast forest, crops, animal pen and a small iron golem farm.",
+	"authors": ["WinkyQX"],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["com.winkyqx.countryhouse.CountryHouseMod"]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
