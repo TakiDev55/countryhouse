@@ -2,19 +2,20 @@ package com.winkyqx.countryhouse;
 
 import java.util.List;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
 /** Double-chest slots in the storage hall (local coordinates, y = 2). */
 public enum Zone {
-	INPUT(1, 13, true, Blocks.WHITE_WOOL),
-	JUNK(3, 13, true, Blocks.BLACK_WOOL),
-	ORES(5, 13, true, Blocks.LIGHT_BLUE_WOOL),
-	FOOD(7, 13, true, Blocks.RED_WOOL),
-	GEAR(9, 13, true, Blocks.GRAY_WOOL),
-	BLOCKS(11, 13, true, Blocks.BROWN_WOOL),
-	MISC(13, 9, false, Blocks.YELLOW_WOOL),
-	IRON(13, 11, false, Blocks.ORANGE_WOOL);
+	INPUT(1, 13, true, Blocks.WOOL.pick(DyeColor.WHITE)),
+	JUNK(3, 13, true, Blocks.WOOL.pick(DyeColor.BLACK)),
+	ORES(5, 13, true, Blocks.WOOL.pick(DyeColor.LIGHT_BLUE)),
+	FOOD(7, 13, true, Blocks.WOOL.pick(DyeColor.RED)),
+	GEAR(9, 13, true, Blocks.WOOL.pick(DyeColor.GRAY)),
+	BLOCKS(11, 13, true, Blocks.WOOL.pick(DyeColor.BROWN)),
+	MISC(13, 9, false, Blocks.WOOL.pick(DyeColor.YELLOW)),
+	IRON(13, 11, false, Blocks.WOOL.pick(DyeColor.ORANGE));
 
 	public final int x;
 	public final int z;

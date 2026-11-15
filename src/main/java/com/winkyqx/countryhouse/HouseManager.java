@@ -11,7 +11,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -130,7 +130,7 @@ public final class HouseManager {
 		}
 
 		// 1) kill golems that spawned on the platform (drops iron + poppies)
-		for (Entity e : level.getEntities((Entity) null, box, en -> en.getType() == EntityType.IRON_GOLEM)) {
+		for (Entity e : level.getEntities((Entity) null, box, en -> en.getType() == EntityTypes.IRON_GOLEM)) {
 			e.kill(level);
 		}
 

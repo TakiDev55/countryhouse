@@ -5,7 +5,9 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -108,7 +110,7 @@ final class HouseBuilder {
 			case WEST -> dx = 1;
 			default -> dx = -1;
 		}
-		BlockState base = Blocks.RED_BED.defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, dir);
+		BlockState base = Blocks.BED.pick(DyeColor.RED).defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, dir);
 		set(x, y, z, base.setValue(BlockStateProperties.BED_PART, BedPart.FOOT));
 		set(x + dx, y, z + dz, base.setValue(BlockStateProperties.BED_PART, BedPart.HEAD));
 	}
@@ -262,7 +264,7 @@ final class HouseBuilder {
 		fill(1, 2, 8, 1, 4, 8, Blocks.BOOKSHELF);
 
 		// rug + dining table with two chairs
-		fill(6, 2, 3, 8, 2, 5, Blocks.RED_CARPET);
+		fill(6, 2, 3, 8, 2, 5, Blocks.CARPET.pick(DyeColor.RED));
 		set(5, 2, 6, Blocks.SPRUCE_FENCE);
 		set(5, 3, 6, Blocks.SPRUCE_PRESSURE_PLATE);
 		set(4, 2, 6, stairs(Blocks.SPRUCE_STAIRS, E));
@@ -344,12 +346,12 @@ final class HouseBuilder {
 			set(24, 1, z, Blocks.SPRUCE_FENCE);
 		}
 		set(16, 1, 8, facing(Blocks.SPRUCE_FENCE_GATE, W));
-		spawn(EntityType.COW, 19, 1, 8);
-		spawn(EntityType.COW, 21, 1, 9);
-		spawn(EntityType.SHEEP, 18, 1, 9);
-		spawn(EntityType.SHEEP, 22, 1, 8);
-		spawn(EntityType.CHICKEN, 20, 1, 7);
-		spawn(EntityType.CHICKEN, 23, 1, 10);
+		spawn(EntityTypes.COW, 19, 1, 8);
+		spawn(EntityTypes.COW, 21, 1, 9);
+		spawn(EntityTypes.SHEEP, 18, 1, 9);
+		spawn(EntityTypes.SHEEP, 22, 1, 8);
+		spawn(EntityTypes.CHICKEN, 20, 1, 7);
+		spawn(EntityTypes.CHICKEN, 23, 1, 10);
 
 		// fast forest: sapling + bone-meal dispenser + button, three plots
 		for (int x : new int[] { 18, 21, 24 }) {
@@ -389,9 +391,9 @@ final class HouseBuilder {
 
 		// entities first (spawned above the bed height), then beds
 		for (int z = 6; z <= 8; z++) {
-			spawn(EntityType.VILLAGER, 6, -7, z);
+			spawn(EntityTypes.VILLAGER, 6, -7, z);
 		}
-		Mob zombie = EntityType.ZOMBIE.spawn(level, f.at(9, -8, 7), EntitySpawnReason.MOB_SUMMONED);
+		Mob zombie = EntityTypes.ZOMBIE.spawn(level, f.at(9, -8, 7), EntitySpawnReason.MOB_SUMMONED);
 		if (zombie != null) {
 			zombie.setNoAi(true);
 			zombie.setSilent(true);
