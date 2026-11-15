@@ -3,7 +3,7 @@ package com.winkyqx.countryhouse;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -26,8 +26,8 @@ public class CountryHouseMod implements ModInitializer {
 		HOUSE_KIT = Registry.register(BuiltInRegistries.ITEM, key,
 				new HouseKitItem(new Item.Properties().setId(key).stacksTo(1)));
 
-		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
-				.register(entries -> entries.accept(HOUSE_KIT));
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+				.register(output -> output.accept(HOUSE_KIT));
 
 		ServerLifecycleEvents.SERVER_STARTED.register(HouseManager::load);
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> HouseManager.clear());
