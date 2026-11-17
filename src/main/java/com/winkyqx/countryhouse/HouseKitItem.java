@@ -30,7 +30,7 @@ public class HouseKitItem extends Item {
 		}
 
 		BlockPos origin = ctx.getClickedPos();
-		if (origin.getY() - 12 < serverLevel.getMinY() || origin.getY() + 18 > serverLevel.getMaxY()) {
+		if (origin.getY() - 30 < serverLevel.getMinY() || origin.getY() + 26 > serverLevel.getMaxY()) {
 			if (player != null) {
 				player.sendSystemMessage(Component.literal("المكان هنا ما يصلح للبناء (قريب من القاع أو السقف)."));
 			}
