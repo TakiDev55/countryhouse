@@ -1,5 +1,5 @@
 # Country House Kit — مود القصر الريفي (Fabric 26.3)
-
+gb
 ## التركيب
 JDK 25 + Fabric Loader 0.20.1+ + Fabric API لـ 26.3.  ثم: `./gradlew build` والجار في `build/libs/`.
 (أو ارفعه على GitHub وخذ الجار من Actions → Artifacts)
