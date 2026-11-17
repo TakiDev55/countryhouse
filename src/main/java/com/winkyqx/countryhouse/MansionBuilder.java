@@ -146,7 +146,7 @@ final class MansionBuilder {
 			c.fill(x, 3, -3, x, 5, -3, Blocks.GLASS_PANE);
 		}
 		// the big purple window
-		c.fill(17, 8, -3, 25, 11, -3, Blocks.PURPLE_STAINED_GLASS);
+		c.fill(17, 8, -3, 25, 11, -3, Blocks.STAINED_GLASS.pick(DyeColor.PURPLE));
 		c.fill(17, 8, -3, 25, 8, -3, Canvas.axis(Blocks.DARK_OAK_LOG, Direction.Axis.X));
 		c.fill(21, 8, -3, 21, 11, -3, Canvas.axis(Blocks.DARK_OAK_LOG, Direction.Axis.Y));
 		// steps and path
